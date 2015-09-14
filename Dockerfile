@@ -1,5 +1,5 @@
-FROM bartt/ubuntu-base
-MAINTAINER Bart Teeuwisse <bart@thecodemill.biz>
+FROM phusion/baseimage:0.9.17
+MAINTAINER nmcaullay <nmcaullay@gmail.com>
 
 RUN apt-get -y install python3-yaml
 
