@@ -2,6 +2,7 @@ FROM phusion/baseimage:0.9.17
 MAINTAINER nmcaullay <nmcaullay@gmail.com>
 
 #RUN apt-get -y install python3-yaml
+RUN apt-get -q update
 RUN apt-get -y install wget
 
 RUN mkdir /pocketmine
