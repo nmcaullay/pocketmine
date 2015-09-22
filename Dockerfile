@@ -16,4 +16,4 @@ WORKDIR /pocketmine
 
 EXPOSE 19132
 
-CMD ["./start.sh", "--no-wizard", "--enable-rcon=on"]
+CMD ["/pocketmine/start.sh", "--no-wizard", "--enable-rcon=on"]
