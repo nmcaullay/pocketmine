@@ -1,7 +1,9 @@
-FROM bartt/ubuntu-base
+#FROM bartt/ubuntu-base
+FROM phusion/baseimage:0.9.17
 MAINTAINER nmcaullay <nmcaullay@gmail.com>
 
-RUN apt-get -y install python3-yaml
+RUN apt-get -y update
+RUN apt-get -y install python3-yaml wget
 
 RUN mkdir /pocketmine
 RUN cd /pocketmine && curl -sL http://get.pocketmine.net/ | bash -s - -r -v development
