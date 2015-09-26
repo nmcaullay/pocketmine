@@ -18,4 +18,5 @@ WORKDIR /pocketmine
 
 EXPOSE 19132
 
-CMD ["./start.sh", "--no-wizard", "--enable-rcon=on", "-f ./PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar"]
+#CMD ["./start.sh", "--no-wizard", "--enable-rcon=on", "-f ./PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar"]
+CMD ["./bin/php5/bin/php", "./PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar"]
