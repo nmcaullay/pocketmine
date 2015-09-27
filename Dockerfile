@@ -13,7 +13,7 @@ RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/Po
 #RUN mv PocketMine-MP.phar PocketMine-MP-orig.phar
 #RUN mv PocketMine-MP_1.5dev-33_master_cbef0e25_API-1.12.0.phar PocketMine-MP.phar
 
-COPY scripts/eula.txt /pocketmine/eula.txt
+COPY source/eula.txt /pocketmine/eula.txt
 
 VOLUME /pocketmine
 WORKDIR /pocketmine
