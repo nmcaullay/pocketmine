@@ -8,6 +8,8 @@ RUN useradd -u 1000 -g 100 pocketmine
 RUN apt-get -y update
 RUN apt-get -y install python3-yaml wget
 
+USER pocketmine
+
 #Create the home folder, set the permissions
 RUN mkdir /pocketmine
 RUN chown -R pocketmine:100 /pocketmine
@@ -17,13 +19,12 @@ RUN mv /pocketmine/PocketMine-MP.phar /pocketmine/PocketMine-MP-orig.phar
 RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
 
 COPY source/eula.txt /pocketmine/eula.txt
+RUN chown -R pocketmine:100 /pocketmine/eula.txt
 
 VOLUME /pocketmine
 WORKDIR /pocketmine
 
 EXPOSE 19132
-
-USER pocketmine
 
 CMD ["./start.sh", "--no-wizard", "--enable-rcon=on"]
 #CMD ["/pocketmine/bin/php5/bin/php", "/pocketmine/PocketMine-MP-new.phar"]
