@@ -20,9 +20,10 @@ COPY source/eula.txt /pocketmine/eula.txt
 #RUN chown -R pocketmine:100 /pocketmine/eula.txt
 
 # Change user to pocketmine
-USER pocketmine
 RUN chown -R pocketmine:100 /pocketmine
 RUN chown -R pocketmine:100 /pocketmine-data
+
+USER pocketmine
 
 VOLUME /pocketmine-data
 #WORKDIR /pocketmine
