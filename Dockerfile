@@ -21,7 +21,7 @@ RUN mv /pocketmine/PocketMine-MP.phar /pocketmine/PocketMine-MP-orig.phar
 RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
 
 COPY source/eula.txt /pocketmine/eula.txt
-RUN chown -R pocketmine:100 /pocketmine/eula.txt
+#RUN chown -R pocketmine:100 /pocketmine/eula.txt
 
 VOLUME /pocketmine
 WORKDIR /pocketmine
