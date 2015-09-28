@@ -28,6 +28,7 @@ USER pocketmine
 VOLUME /pocketmine-data
 #WORKDIR /pocketmine
 
+#Expose the port from the container
 EXPOSE 19132
 
 CMD ["./start.sh", "--no-wizard", "--enable-rcon=on", "--data-path=/pocketmine-data"]
