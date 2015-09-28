@@ -11,11 +11,6 @@ RUN apt-get -y install python3-yaml wget
 #Create the home folder, set the permissions
 RUN mkdir /pocketmine
 
-RUN chown -R pocketmine:100 /pocketmine
-
-# Change user to pocketmine
-USER pocketmine
-
 RUN cd /pocketmine && curl -sL http://get.pocketmine.net/ | bash -s - -r -v development
 RUN mv /pocketmine/PocketMine-MP.phar /pocketmine/PocketMine-MP-orig.phar
 RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
@@ -23,8 +18,12 @@ RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/Po
 COPY source/eula.txt /pocketmine/eula.txt
 #RUN chown -R pocketmine:100 /pocketmine/eula.txt
 
+# Change user to pocketmine
+USER pocketmine
+RUN chown -R pocketmine:100 /pocketmine
+
 VOLUME /pocketmine
-WORKDIR /pocketmine
+#WORKDIR /pocketmine
 
 EXPOSE 19132
 
