@@ -4,7 +4,6 @@ MAINTAINER nmcaullay <nmcaullay@gmail.com>
 
 #Create the pocketmine user
 RUN useradd -u 1000 -g 100 pocketmine
-USER pocketmine
 
 RUN apt-get -y update
 RUN apt-get -y install python3-yaml wget
@@ -23,6 +22,8 @@ VOLUME /pocketmine
 WORKDIR /pocketmine
 
 EXPOSE 19132
+
+USER pocketmine
 
 CMD ["./start.sh", "--no-wizard", "--enable-rcon=on"]
 #CMD ["/pocketmine/bin/php5/bin/php", "/pocketmine/PocketMine-MP-new.phar"]
