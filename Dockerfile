@@ -26,7 +26,7 @@ RUN chown -R pocketmine:100 /pocketmine-data
 USER pocketmine
 
 VOLUME /pocketmine-data
-#WORKDIR /pocketmine
+WORKDIR /pocketmine
 
 #Expose the port from the container
 EXPOSE 19132
