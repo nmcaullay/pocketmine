@@ -8,10 +8,11 @@ RUN useradd -u 1000 -g 100 pocketmine
 RUN apt-get -y update
 RUN apt-get -y install python3-yaml wget
 
-USER pocketmine
-
 #Create the home folder, set the permissions
 RUN mkdir /pocketmine
+
+# Change user to pocketmine
+USER pocketmine
 RUN chown -R pocketmine:100 /pocketmine
 
 RUN cd /pocketmine && curl -sL http://get.pocketmine.net/ | bash -s - -r -v development
