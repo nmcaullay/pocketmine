@@ -26,7 +26,6 @@ RUN chown -R pocketmine:100 /pocketmine
 
 USER pocketmine
 
-#VOLUME /pocketmine
 WORKDIR /pocketmine
 
 #Expose the port from the container
@@ -34,3 +33,5 @@ EXPOSE 19132
 
 CMD ["./start.sh", "--no-wizard", "--enable-rcon=on", "--data-path=/pocketmine"]
 #CMD ["/pocketmine/bin/php5/bin/php", "/pocketmine/PocketMine-MP-new.phar"]
+
+VOLUME /pocketmine
