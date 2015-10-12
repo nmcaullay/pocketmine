@@ -27,7 +27,7 @@ COPY source/eula.txt /pocketmine/eula.txt
 RUN chown -R pocketmine:100 /pocketmine
 #RUN chown -R pocketmine:100 /pocketmine-data
 
-USER pocketmine
+#USER pocketmine
 
 WORKDIR /pocketmine
 
