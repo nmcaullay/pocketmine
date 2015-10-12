@@ -2,6 +2,9 @@
 FROM phusion/baseimage:0.9.17
 MAINTAINER nmcaullay <nmcaullay@gmail.com>
 
+# Set correct environment variables.
+ENV HOME /root
+
 #Create the pocketmine user
 RUN useradd -u 1000 -g 100 pocketmine
 
@@ -34,4 +37,4 @@ EXPOSE 19132
 CMD ["./start.sh", "--no-wizard", "--enable-rcon=on", "--data-path=/pocketmine"]
 #CMD ["/pocketmine/bin/php5/bin/php", "/pocketmine/PocketMine-MP-new.phar"]
 
-VOLUME /pocketmine
+#VOLUME /pocketmine
