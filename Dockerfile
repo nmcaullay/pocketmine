@@ -18,7 +18,8 @@ RUN mkdir /pocketmine
 RUN cd /pocketmine && curl -sL http://get.pocketmine.net/ | bash -s - -r -v development
 RUN mv /pocketmine/PocketMine-MP.phar /pocketmine/PocketMine-MP-orig.phar
 #RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/30/artifact/PocketMine-MP_1.6dev-30_mcpe-0.12_86c11986_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
-RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/43/artifact/PocketMine-MP_1.6dev-43_0.12-items_84be56fe_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
+#RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/43/artifact/PocketMine-MP_1.6dev-43_0.12-items_84be56fe_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
+RUN wget http://jenkins.pocketmine.net/job/PocketMine-MP-Bleeding/48/artifact/PocketMine-MP_1.6dev-48_mcpe-0.12_f9d7e204_API-1.13.0.phar -O /pocketmine/PocketMine-MP.phar
 
 COPY source/eula.txt /pocketmine/eula.txt
 #RUN chown -R pocketmine:100 /pocketmine/eula.txt
